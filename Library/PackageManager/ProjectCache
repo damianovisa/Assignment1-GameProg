@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638320193112982135
+      ticks: 638320390327235342
     m_Hash: 1525443029
   m_LockFileStatus:
     m_FilePath: C:/Users/2062581/Documents/GitHub/Assignment1-GameProg/Packages/packages-lock.json
@@ -13,8 +13,8 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638320194270715118
-    m_Hash: 1100756038
+      ticks: 638320390327235342
+    m_Hash: 3911180916
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

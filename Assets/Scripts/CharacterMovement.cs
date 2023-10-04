@@ -47,13 +47,13 @@ public class CharacterMovement : MonoBehaviour
                 animator.SetFloat("Speed",1.0f);
             }else{
                 animator.SetFloat("Speed",0.5f);
-            }
+            } 
         }else{
             animator.SetFloat("Speed",0f);
         }
-        if(Input.GetButtonUp("Fire1")){
-            animator.applyRootMotion = true; 
-        }
+        // if(Input.GetButtonUp("Fire1")){
+        //     animator.applyRootMotion = true; 
+        // }
         animator.SetBool("IsGrounded",isOnGround);
     }
 
