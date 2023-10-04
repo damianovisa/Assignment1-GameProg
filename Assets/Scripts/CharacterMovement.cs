@@ -7,14 +7,14 @@ public class CharacterMovement : MonoBehaviour
     public Vector3 gravity;
     public Vector3 playerVelocity;
     public bool isOnGround = false;
-    public float gravityValue = -10.0f;
-    private float jumpHeight = 2f;
+    public float gravityValue = -9.81f;
+    private float jumpHeight = 1.5f;
     private int jumpCount = 0;
 
     public float walkSpeed = 3;
     public float runSpeed = 8; 
     private CharacterController controller;
-    private Animator animator;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,7 @@ public class CharacterMovement : MonoBehaviour
 
     void LateUpdate()
     {
-        ProcessMovement();
+        UpdateAnimator();
     }
 
     void DisableRootMotion()
@@ -40,7 +40,7 @@ public class CharacterMovement : MonoBehaviour
     void UpdateAnimator()
     {
         isOnGround = controller.isGrounded; 
-        // TODO 
+        
         Vector3 characterXandZmotion = new Vector3(playerVelocity.x,0.0f,playerVelocity.z);
         if(Mathf.Abs(Input.GetAxis("Horizontal"))>0.0f || Mathf.Abs(Input.GetAxis("Vertical"))>0.0f){
             if(Input.GetButton("Fire3")){//Left Shift
@@ -49,7 +49,7 @@ public class CharacterMovement : MonoBehaviour
                 animator.SetFloat("Speed",0.5f);
             }
         }else{
-            animator.SetFloat("Speed",0.0f);
+            animator.SetFloat("Speed",0f);
         }
         if(Input.GetButtonUp("Fire1")){
             animator.applyRootMotion = true; 
@@ -111,7 +111,7 @@ public class CharacterMovement : MonoBehaviour
             if(jumpCount == 1){
                 if (Input.GetButtonDown("Jump"))
                 {
-                    gravity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue); 
+                    gravity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue); 
                     jumpCount = 0;
                 }
             }
