@@ -7,17 +7,18 @@ public class CharacterMovement : MonoBehaviour
     public Vector3 gravity;
     public Vector3 playerVelocity;
     public bool isOnGround = true;
-    public bool canDoubleJump = false;
+    public static bool canDoubleJump = false;
     public float gravityValue = -9.81f;
     public float mouseSensitivy = 5.0f;
     private float jumpHeight = 1.5f;
-    private int jumpCount = 0;
     public float speed = 5.0f;
 
     public float walkSpeed = 3;
     public float runSpeed = 8; 
     private CharacterController controller;
     Animator animator;
+
+    bool hasJumped = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,7 +75,7 @@ public class CharacterMovement : MonoBehaviour
         }else{
             animator.SetFloat("Speed",0f);
         }
-        animator.SetBool("IsGrounded",isOnGround);
+       
     }
 
     float GetMovementSpeed()
@@ -164,19 +165,35 @@ public class CharacterMovement : MonoBehaviour
 
         if (isOnGround)
         {
+            animator.SetBool("IsGrounded",true);
+            animator.SetBool("CanDoubleJump",false);
+
             if (Input.GetButtonDown("Jump"))
             {
+                animator.SetBool("IsGrounded",false);
                 gravity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+                hasJumped = true;
             }
+            
             else
             {
                 // Dont apply gravity if grounded and not jumping
                 gravity.y = -1.0f;
+                hasJumped = false;
             }
-        }
-        
-        else
+        }else
         {
+            if(canDoubleJump == true && hasJumped == true){
+                if (Input.GetButtonDown("Jump"))
+                {
+                    animator.Play("Double Jump");
+                    canDoubleJump = false;
+                    gravity.y += Mathf.Sqrt(jumpHeight * -1.5f * gravityValue);
+                    animator.SetBool("CanDoubleJump",true);
+                    animator.SetBool("IsGrounded",false); 
+                }
+                    
+            }
             // Since there is no physics applied on character controller we have this applies to reapply gravity
             gravity.y += gravityValue * Time.deltaTime;
         }
@@ -184,6 +201,5 @@ public class CharacterMovement : MonoBehaviour
         playerVelocity = gravity * Time.deltaTime + movement;
         controller.Move(playerVelocity);
     }
-
-    
+ 
 }

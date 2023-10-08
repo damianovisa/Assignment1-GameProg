@@ -353,6 +353,7 @@
 "Assets/Scripts/MenuManager.cs"
 "Assets/Scripts/MovingObstacle.cs"
 "Assets/Scripts/NextLevel.cs"
+"Assets/Scripts/ObstacleFall.cs"
 "Assets/Scripts/ObstacleScript.cs"
 "Assets/Scripts/PowerUpsAnimation.cs"
 "Assets/Scripts/ScoreManager.cs"

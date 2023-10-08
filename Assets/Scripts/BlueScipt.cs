@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BlueScipt : MonoBehaviour
 {
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +18,11 @@ public class BlueScipt : MonoBehaviour
 
     public void OnTriggerEnter(Collider other){
         gameObject.SetActive(false);
+        CharacterMovement.canDoubleJump = true;
+        Invoke("reAppear",30.0f);
+    }
+
+    public void reAppear(){
+        gameObject.SetActive(true);
     }
 }

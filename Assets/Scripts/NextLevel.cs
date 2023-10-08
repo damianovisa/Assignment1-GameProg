@@ -20,6 +20,7 @@ public class NextLevel : MonoBehaviour
 
     public void OnTriggerEnter(Collider other){
         if(other.gameObject.tag == "Player"){
+            GameManager.prevScore = GameManager.score;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

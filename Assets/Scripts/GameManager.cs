@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public static int score = 0;
-
+    public static int prevScore = 0;
 
 
     private void Awake() { 
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     } 
     
     public void IncrementScore(){
-        score+= 5;
+        score+= 50;
     }
     
 }
