@@ -19,9 +19,7 @@ public class NextLevel : MonoBehaviour
     }
 
     public void OnTriggerEnter(Collider other){
-        Debug.Log("level");
         if(other.gameObject.tag == "Player"){
-            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

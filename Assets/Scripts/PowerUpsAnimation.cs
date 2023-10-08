@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerUpsAnimation : MonoBehaviour
 {
     float timer = 0;
-    Vector3 movement = new Vector3(-0.3f, 0, 0);
+    Vector3 movement = new Vector3(-0.2f, 0, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class PowerUpsAnimation : MonoBehaviour
         transform.Rotate(0.5f,0,0);
 
         timer += Time.deltaTime;
-        if (timer > 0.2)
+        if (timer > 0.3)
         {
             timer = 0;
             movement = -1 * movement;

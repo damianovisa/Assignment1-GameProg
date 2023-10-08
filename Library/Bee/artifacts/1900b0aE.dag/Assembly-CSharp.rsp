@@ -345,13 +345,17 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/BlueScipt.cs"
 "Assets/Scripts/CameraSetUp.cs"
 "Assets/Scripts/CharacterMovement.cs"
 "Assets/Scripts/CoinScript.cs"
+"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/MenuManager.cs"
+"Assets/Scripts/MovingObstacle.cs"
 "Assets/Scripts/NextLevel.cs"
 "Assets/Scripts/ObstacleScript.cs"
 "Assets/Scripts/PowerUpsAnimation.cs"
+"Assets/Scripts/ScoreManager.cs"
 -langversion:9.0
 
 /deterministic

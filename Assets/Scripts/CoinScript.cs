@@ -14,8 +14,8 @@ public class CoinScript : MonoBehaviour
     public void OnTriggerEnter(Collider other){
         
         if(other.gameObject.tag == "Player"){
-            Debug.Log("touch");
             Destroy(coin); 
+            GameManager.Instance.IncrementScore();
         }
     }
     // Update is called once per frame
