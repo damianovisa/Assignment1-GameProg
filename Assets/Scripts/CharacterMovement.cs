@@ -11,10 +11,10 @@ public class CharacterMovement : MonoBehaviour
     public float gravityValue = -9.81f;
     public float mouseSensitivy = 5.0f;
     private float jumpHeight = 1.5f;
-    public float speed = 5.0f;
+    public float speed = 4.0f;
 
-    public float walkSpeed = 3;
-    public float runSpeed = 8; 
+    public float walkSpeed = 2;
+    public float runSpeed = 4; 
     private CharacterController controller;
     Animator animator;
 
@@ -92,55 +92,7 @@ public class CharacterMovement : MonoBehaviour
 
     void ProcessMovement()
     {  
-    //    // Moving the character foward according to the speed
-    //     float speed = GetMovementSpeed();
-
-    //     Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-    //     // Turning the character
-    //     if (move != Vector3.zero)
-    //     {
-    //         gameObject.transform.forward = move;
-    //     }
-
-    //     playerVelocity =  move * Time.deltaTime * speed;
-    //     // Making sure we dont have a Y velocity if we are grounded
-    //     // controller.isGrounded tells you if a character is grounded ( IE Touches the ground)
-       
-    //     // Since there is no physics applied on character controller we have this applies to reapply gravity
-        
-    //     isOnGround = controller.isGrounded; 
-    //     Vector3 movement = move.normalized * speed * Time.deltaTime;
-         
-    //     if (isOnGround)
-    //     {
-            
-    //         if (Input.GetButtonDown("Jump"))
-    //         {
-    //             gravity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-    //             jumpCount = 1;
-    //         }
-    //         else
-    //         {
-    //             // Dont apply gravity if grounded and not jumping
-    //             jumpCount = 0;
-    //             gravity.y = -1.0f;
-    //         }
-    //     }
-    //     else
-    //     {
-    //         // Since there is no physics applied on character controller we have this applies to reapply gravity
-    //         if(jumpCount == 1){
-    //             if (Input.GetButtonDown("Jump"))
-    //             {
-    //                 gravity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue); 
-    //                 jumpCount = 0;
-    //             }
-    //         }
-    //         gravity.y += gravityValue * Time.deltaTime;
-    //     }
-    //     playerVelocity = gravity * Time.deltaTime + movement;
-    //     controller.Move(playerVelocity);
-
+    
         float speed = GetMovementSpeed();
  
         // Get the camera's forward and right vectors
